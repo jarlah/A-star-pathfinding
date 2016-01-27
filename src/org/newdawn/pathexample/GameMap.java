@@ -161,7 +161,9 @@ public class GameMap implements TileBasedMap {
 	 * @see TileBasedMap#getCost(Mover, int, int, int, int)
 	 */
 	public float getCost(Mover mover, int sx, int sy, int tx, int ty) {
-		return 1;
+		float dx = sx - tx;
+		float dy = sy - ty;
+		return (float) Math.sqrt(dx * dx + dy * dy);
 	}
 
 	/**
